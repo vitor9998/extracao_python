@@ -1,0 +1,125 @@
+/*
+-----------------------------------------------
+CSS Documento
+
+Site: TJDFT
+Autor:   SERAGI/SEIN    informatica@tjdft.gov.br
+Versao:  2012.01
+----------------------------------------------- */
+
+/* CSS principal para as páginas de resposta de banco */
+
+body {
+margin: 0;
+padding: 0;
+font:12px Verdana, Helvetica, sans-serif;
+color: #2D3C50;
+background-color:#FFFFFF;
+}
+
+* { padding: 0; margin: 0; }
+
+p { 
+margin: 0 18px 10px 10px;
+padding:0;
+text-align:justify;
+}
+
+img { border:0px;}
+
+table {
+font:12px Verdana, Helvetica, sans-serif;
+color: #2D3C50;
+border:0;
+font-weight:normal;
+}
+
+/* Definições para a cabeça das páginas*/
+
+#cabeca {
+/*background:url(../img/tpl/fundoResp.jpg) repeat-x;*/
+background-color:#205272;
+width: 100%;
+height: 64px;
+}
+
+#cabeca h1 {
+	text-indent: -5000px;
+/*	background: url(../img/tpl/palacio.png) no-repeat 100% 0; */
+	height: 122px;
+}
+
+#cabeca h1 div {
+	/*background: url(../img/tpl/cabecaResp.jpg) no-repeat;*/
+	background: url(http://www2.tjdft.jus.br/img/cabecaBrasaoPgResp.jpg) no-repeat;
+	width: 750px;
+	height: 64px;
+}
+
+#cabeca h1 span { display: none; }
+
+/*Definições gerais*/
+
+#linkVoltar { 
+background:url(http://www2.tjdft.jus.br/img/setaAzul.gif) no-repeat right center;
+padding-right:10px;
+text-decoration:none;
+}
+
+.voltar {
+text-align:right;
+margin: 18px 18px 18px 0;
+padding:0;
+}
+
+hr{width: 98%;} /*padrão do hr 98% retirar depois que concluir a limpeza dos CGI*/
+
+
+/* Definicao dos links */ 
+
+a:link {
+/*color:#2D3C50;*/
+color:#33779B;
+text-decoration: none;
+}
+
+a:visited {
+text-decoration: underline;
+}
+
+a:hover {
+color:#000000;
+text-decoration: underline;
+}
+
+/*estilos exclusivos para impressao */
+
+
+@media print {
+#cabeca, #rodape, .voltar, .hrdet{
+  display:none !important;
+}
+
+.resposta{
+  height:auto !important;
+}
+
+#conteudo{
+  width:auto !important;
+  float:left; 
+}
+
+
+#contEsq{
+  width:auto !important;
+}
+
+table {
+   border:0;
+}
+
+th, td {
+   border:0;
+}
+
+}

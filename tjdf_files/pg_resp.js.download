@@ -1,0 +1,29 @@
+//script para o link voltar nas paginas respostas
+
+function addEvent(obj, evType, fn){ 
+ if (obj.addEventListener){ 
+   obj.addEventListener(evType, fn, false); 
+   return true; 
+ } else if (obj.attachEvent){ 
+   var r = obj.attachEvent("on"+evType, fn); 
+   return r; 
+ } else { 
+   return false; 
+ } 
+}
+function addVoltar(){
+	addEvent(document.getElementById('linkVoltar'), 'click', fnBack);
+}
+function fnBack(){
+	rgfile = /^HTTPS?:\/\/.*TJDFT?\.(JUS|GOV)\.BR/;
+	if(!document.referrer.toUpperCase().match(rgfile)){//se for de algum dominio diferente do tjdft.jus.br
+		window.location.href = "http://www.tjdft.jus.br/";
+	}
+	else{
+        if (parseInt(window.history.length) > 1) 
+    		window.history.back();
+        else
+            window.location.href = "http://www.tjdft.jus.br/";
+	}
+}
+addEvent(window, 'load', addVoltar);
